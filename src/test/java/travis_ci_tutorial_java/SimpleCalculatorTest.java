@@ -30,6 +30,11 @@ public class SimpleCalculatorTest {
 		assertEquals(calc.divide(10, 2), 5);
 	}
 	
+	@Test(expected = ArithmeticException.class)
+	public void testDivideZero() {
+		SimpleCalculator calc = new SimpleCalculator();
+		calc.divide(10, 0);
+	}
 	
-	
+
 }
