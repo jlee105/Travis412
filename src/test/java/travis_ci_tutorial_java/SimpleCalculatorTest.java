@@ -36,5 +36,28 @@ public class SimpleCalculatorTest {
 		calc.divide(10, 0);
 	}
 	
+	//@SuppressWarnings("deprecation")
+	@Test
+	public void testRoot() {
+		SimpleCalculator calc = new SimpleCalculator();
+		assertEquals(calc.squarert(25.0), 5.0, 5.0);
+	}
+	
+	@Test 
+	public void testNegRoot() {
+		SimpleCalculator calc = new SimpleCalculator();
+		try {
+			int a = -4;
+			calc.squarert(a);
+			if (a < 0) {
+				throw new ArithmeticException();
+			}
+		} catch (ArithmeticException e) {
+			System.out.println("Cannot sqaure root a negative number!");
+		}
+		
+		
+	}
+	
 
 }
